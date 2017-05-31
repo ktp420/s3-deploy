@@ -34,10 +34,8 @@ setup(
     package_data={'': _find_package_data()},
     entry_points={'console_scripts': ['agorawebdeploy = agorawebdeploy:main']},
     install_requires=[
-        'boto3', # TODO pin this to a range
-        'netaddr',
-        'funcy',
-        # 'troposphere', # TODO pin this to a randdge
+        'docopt>=0.6.2,<1.0',
+        'boto3>=1.4.4,<2.0',
     ],
     classifiers=[
         'Programming Language :: Python :: 2',
