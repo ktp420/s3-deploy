@@ -1,0 +1,21 @@
+# python files
+*.pyc
+__pycache__/
+MANIFEST
+dist/
+*.egg
+*.egg-info/
+.cache/
+.coverage
+build/
+.eggs/
+.tox/
+
+.idea/
+
+# sublime files
+*.sublime-project
+*.sublime-workspace
+
+# additional files
+.hatchery.work/

@@ -1,0 +1,35 @@
+---
+
+image: python:2-slim
+
+variables:
+    HATCHERY_VERSION: '0.4.2'
+
+stages:
+    - test
+    - push
+
+hatchery-test:
+    stage: test
+    script:
+        - apt-get update && apt-get install -y gcc git
+        - pip install "hatchery==${HATCHERY_VERSION}"
+        - pip install -i https://pypi.laputa.veracode.io/pypi/ -r requirements.txt
+        - hatchery test -s
+
+tag-master:
+    stage: push
+    script:
+        - pip install -i https://pypi.laputa.veracode.io/pypi/ laputa-tagmaker
+        - tagmaker ${CI_PROJECT_ID} ${CI_BUILD_REF} ${API_TOKEN}
+    only:
+        - master
+
+hatchery-upload:
+    stage: push
+    script:
+        - apt-get update && apt-get install -y gcc
+        - pip install "hatchery==${HATCHERY_VERSION}"
+        - hatchery package upload --release-version=${CI_BUILD_TAG}
+    only:
+        - tags

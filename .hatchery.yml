@@ -1,0 +1,9 @@
+---
+
+readme_to_rst: false
+
+pypi_repository: https://pypi.laputa.veracode.io
+
+test_command:
+    #    - py.test tests --doctest-modules agorawebdeploy --cov agorarunners --cov-report=term-missing
+    - flake8 agorawebdeploy
