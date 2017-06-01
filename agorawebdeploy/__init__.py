@@ -94,8 +94,8 @@ def main(argv=None):
 
     command_input = arg_dict['<command>']
     command_functions = {c.name: c.function for c in COMMAND_LIST}
-    if command_input not in command_functions.keys():
-        logging.getLogger('ecsinfra').error('{} is not a valid command'.format(command_input))
+    if command_input != 'help' and command_input not in command_functions.keys():
+        logger.error('{} is not a valid command'.format(command_input))
         print doc
         return FAILURE
 

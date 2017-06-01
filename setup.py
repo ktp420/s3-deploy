@@ -2,7 +2,7 @@ import os
 from setuptools import setup, find_packages
 from imp import find_module, load_module
 
-found = find_module('_version', ['agorarunners'])
+found = find_module('_version', ['agorawebdeploy'])
 _version = load_module('_version', *found)
 
 
