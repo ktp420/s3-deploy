@@ -35,7 +35,8 @@ setup(
     entry_points={'console_scripts': ['agorawebdeploy = agorawebdeploy:main']},
     install_requires=[
         'docopt>=0.6.2,<1.0',
-        'boto3>=1.4.4,<2.0',
+        'funcy>=1.4.4,<2.0',
+        'boto3==1.4.4',
     ],
     classifiers=[
         'Programming Language :: Python :: 2',
