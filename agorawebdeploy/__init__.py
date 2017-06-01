@@ -75,6 +75,7 @@ def format_and_process_doc(doc, argv, format_kwargs=None, include_globals=False,
         process_global_options(arg_dict)
     return doc_formatted, arg_dict
 
+
 def main(argv=None):
     argv = argv or sys.argv[1:]
     try:
@@ -112,4 +113,3 @@ def main(argv=None):
     global_options = argv[:argv.index(command_input)]
     argv_remainder = argv[argv.index(command_input):]
     return command_functions[command_input](argv_remainder + global_options, help=help)
-
