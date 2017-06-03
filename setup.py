@@ -32,7 +32,7 @@ setup(
     license='MIT',
     packages=['agorawebdeploy'],
     package_data={'': _find_package_data()},
-    entry_points={'console_scripts': ['agorawebdeploy = agorawebdeploy:main']},
+    entry_points={'console_scripts': ['agorawebdeploy = agorawebdeploy.cli:main']},
     install_requires=[
         'docopt>=0.6.2,<1.0',
         'funcy>=1.4.4,<2.0',

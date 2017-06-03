@@ -33,6 +33,14 @@ def unique_string(prefix='cli'):
 
 
 def invalidate_caches(distribution_ids, paths_list, wait_to_complete=False):
+    """
+    Create and optionally wait for CloudFront cache invalidation for given paths
+
+    :param distribution_ids: list of CloudFront distribution ids
+    :param paths_list: list of paths to invalidate
+    :param wait_to_complete: if true, waits for cache invalidation [default: false]
+    :return: dict of distribution id: Invalidation record
+    """
     client = useboto.get_boto3_client('cloudfront')
     if not funcy.is_list(distribution_ids):
         distribution_ids = (distribution_ids,)
